@@ -20,6 +20,7 @@ a:hover{color:#F2ECE3}
 ::placeholder{color:currentColor;opacity:.5}
 input,select,textarea,button{font:inherit;color:inherit}
 @keyframes mustRise{from{transform:translateY(110%)}to{transform:translateY(0)}}
+[data-hide-scrollbar]::-webkit-scrollbar{display:none;width:0;height:0}
 </style>
 </helmet>
 <div ref="{{ rootRef }}" lang="tr" style="position:relative;min-height:100vh;background:#100E0D;color:#F2ECE3;font-family:'Geist',system-ui,sans-serif;overflow-x:clip">
@@ -102,11 +103,13 @@ input,select,textarea,button{font:inherit;color:inherit}
         </div>
       </div>
     </div>
-    <div ref="{{ railRef }}" onPointerDown="{{ railDown }}" onPointerMove="{{ railMove }}" onPointerUp="{{ railUp }}" onPointerCancel="{{ railUp }}" data-cursor="Sürükle" style="display:flex;align-items:flex-start;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scrollbar-width:none;padding:0 clamp(20px,4vw,56px);user-select:none;-webkit-user-select:none">
+    <div ref="{{ railRef }}" onPointerDown="{{ railDown }}" onPointerMove="{{ railMove }}" onPointerUp="{{ railUp }}" onPointerCancel="{{ railUp }}" data-cursor="Sürükle" data-hide-scrollbar="" style="display:flex;align-items:flex-start;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scrollbar-width:none;padding:0 clamp(20px,4vw,56px);user-select:none;-webkit-user-select:none">
       <sc-for list="{{ railProjects }}" as="p" hint-placeholder-count="4">
         <article onClick="{{ p.open }}" style="flex:none;width:{{ p.w }};display:flex;flex-direction:column;gap:16px">
           <div style="position:relative;aspect-ratio:{{ p.ratio }};border-radius:6px;overflow:hidden;transition:transform .6s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(.97)">
-            <div style="position:absolute;inset:0;container-type:inline-size;background-color:{{ p.bg }};background-image:repeating-linear-gradient(135deg,{{ p.st }} 0 1px,transparent 1px 12px);color:{{ p.fg }}">
+            <div style="position:absolute;inset:0;container-type:inline-size;background-color:{{ p.bg }};color:{{ p.fg }}">
+              <img src="{{ p.image }}" alt="{{ p.name }} için örnek proje görseli" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,14,13,.02) 35%,rgba(16,14,13,.68) 100%)"></div>
               <span style="position:absolute;top:16px;left:18px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase">Görsel · {{ p.no }}</span>
               <span style="position:absolute;left:5%;right:5%;bottom:5%;font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:{{ p.fs }};line-height:.97;letter-spacing:-.04em;text-transform:uppercase">{{ p.name }}</span>
             </div>
@@ -372,7 +375,9 @@ input,select,textarea,button{font:inherit;color:inherit}
         <sc-for list="{{ gridProjects }}" as="p" hint-placeholder-count="4">
           <article onClick="{{ p.open }}" data-cursor="İncele" style="flex:{{ p.flex }};margin-top:{{ p.mt }};min-width:0;display:flex;flex-direction:column;gap:18px">
             <div style="position:relative;aspect-ratio:{{ p.ratio }};border-radius:6px;overflow:hidden;transition:transform .6s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(.98)">
-              <div style="position:absolute;inset:0;container-type:inline-size;background-color:{{ p.bg }};background-image:repeating-linear-gradient(135deg,{{ p.st }} 0 1px,transparent 1px 12px);color:{{ p.fg }}">
+              <div style="position:absolute;inset:0;container-type:inline-size;background-color:{{ p.bg }};color:#F2ECE3">
+                <img src="{{ p.image }}" alt="{{ p.name }} için örnek proje görseli" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,14,13,.02) 35%,rgba(16,14,13,.68) 100%)"></div>
                 <span style="position:absolute;top:18px;left:20px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase">Görsel · {{ p.no }}</span>
                 <span style="position:absolute;left:5%;right:5%;bottom:5%;font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:{{ p.fs }};line-height:.97;letter-spacing:-.04em;text-transform:uppercase">{{ p.name }}</span>
               </div>
@@ -400,7 +405,9 @@ input,select,textarea,button{font:inherit;color:inherit}
         <sc-for list="{{ deskCards }}" as="c" hint-placeholder-count="8">
           <div onPointerDown="{{ c.down }}" onPointerMove="{{ deskMove }}" onPointerUp="{{ deskUp }}" onPointerCancel="{{ deskUp }}" data-cursor="Sürükle" style="position:absolute;left:{{ c.x }}%;top:{{ c.y }}%;z-index:{{ c.z }};width:clamp(160px,20vw,280px);box-sizing:border-box;padding:10px 10px 14px;border-radius:4px;background:#F2ECE3;color:#100E0D;box-shadow:0 18px 40px rgba(0,0,0,.45);transform:rotate({{ c.r }}deg);opacity:{{ c.op }};touch-action:none;user-select:none;-webkit-user-select:none;transition:opacity .35s,left .8s cubic-bezier(.16,1,.3,1),top .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1),box-shadow .3s">
             <div style="position:relative;aspect-ratio:4/3;border-radius:2px;overflow:hidden">
-              <div style="position:absolute;inset:0;container-type:inline-size;background-color:{{ c.bg }};background-image:repeating-linear-gradient(135deg,{{ c.st }} 0 1px,transparent 1px 10px);color:{{ c.fg }}">
+              <div style="position:absolute;inset:0;container-type:inline-size;background-color:{{ c.bg }};color:#F2ECE3">
+                <img src="{{ c.image }}" alt="{{ c.name }} için örnek proje görseli" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,14,13,.02) 35%,rgba(16,14,13,.68) 100%)"></div>
                 <span style="position:absolute;left:6%;right:6%;bottom:6%;font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:{{ c.fs }};line-height:.97;letter-spacing:-.04em;text-transform:uppercase">{{ c.name }}</span>
               </div>
             </div>
@@ -508,7 +515,9 @@ input,select,textarea,button{font:inherit;color:inherit}
     </div>
     <div style="padding:clamp(32px,4vw,56px) clamp(20px,4vw,56px) 0">
       <div style="position:relative;aspect-ratio:16/8;min-height:240px;border-radius:8px;overflow:hidden">
-        <div style="position:absolute;inset:0;container-type:inline-size;background-color:{{ cs.bg }};background-image:repeating-linear-gradient(135deg,{{ cs.st }} 0 1px,transparent 1px 14px);color:{{ cs.fg }}">
+        <div style="position:absolute;inset:0;container-type:inline-size;background-color:{{ cs.bg }};color:#F2ECE3">
+          <img src="{{ cs.image }}" alt="{{ cs.name }} için örnek proje görseli" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,14,13,.02) 35%,rgba(16,14,13,.68) 100%)"></div>
           <span style="position:absolute;top:22px;left:24px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase">Ana görsel · {{ cs.no }}</span>
           <span style="position:absolute;left:4%;right:4%;bottom:5%;font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:{{ cs.fs }};line-height:.97;letter-spacing:-.04em;text-transform:uppercase">{{ cs.name }}</span>
         </div>
@@ -569,35 +578,35 @@ class Component extends DCLogic {
       paper: { bg: '#F2ECE3', fg: '#100E0D', st: 'rgba(16,14,13,.07)' }
     };
     const P = [
-      { name: 'Pervane', title: 'Paranın yeni hızı', sector: 'Fintech', year: '2026', cats: ['Marka', 'Dijital'], services: 'Marka stratejisi, kimlik, mobil uygulama', tone: 'orange',
+      { name: 'Pervane', image: './assets/thumbnails/pervane.jpg', title: 'Paranın yeni hızı', sector: 'Fintech', year: '2026', cats: ['Marka', 'Dijital'], services: 'Marka stratejisi, kimlik, mobil uygulama', tone: 'orange',
         problem: 'Kalabalık bir fintech pazarında Pervane, rakiplerinden ayırt edilemeyen bir "güvenilir mavi"ye sıkışmıştı.',
         idea: 'Hızı bir renk ve hareket sistemine çevirdik: Uygulamadaki her işlem, markanın imzası olan tek bir dönüşle tamamlanıyor.',
         result: 'Yeni kimlik, uygulama arayüzü ve lansman iletişimi tek seferde, bütün kanallarda yayına alındı.' },
-      { name: 'Atölye Kahve', title: 'Her fincanda bir imza', sector: 'Yiyecek & içecek', year: '2025', cats: ['Marka'], services: 'Kimlik, ambalaj, mekân grafikleri', tone: 'ink',
+      { name: 'Atölye Kahve', image: './assets/thumbnails/atolye-kahve.jpg', title: 'Her fincanda bir imza', sector: 'Yiyecek & içecek', year: '2025', cats: ['Marka'], services: 'Kimlik, ambalaj, mekân grafikleri', tone: 'ink',
         problem: 'Üç şubeli bir kahve dükkânı, zincir markalarla aynı rafta görünmez kalıyordu.',
         idea: 'Her çekirdeğin hikâyesini ambalajın üzerine el yazısıyla taşıyan, atölye ruhlu bir kimlik kurduk.',
         result: 'Ambalaj serisi, raf kimliği ve dükkân içi yönlendirme sistemi.' },
-      { name: 'Rüzgâr Festivali', title: 'Üç gün, tek frekans', sector: 'Kültür & etkinlik', year: '2025', cats: ['Kampanya', 'Sosyal'], services: 'Kampanya, açık hava, sosyal medya', tone: 'paper',
+      { name: 'Rüzgâr Festivali', image: './assets/thumbnails/ruzgar-festivali.jpg', title: 'Üç gün, tek frekans', sector: 'Kültür & etkinlik', year: '2025', cats: ['Kampanya', 'Sosyal'], services: 'Kampanya, açık hava, sosyal medya', tone: 'paper',
         problem: 'İlk yılındaki bir müzik festivalinin bilinirliği sıfırdan inşa etmesi gerekiyordu.',
         idea: 'Şehrin dört bir yanına "frekans" afişleri yerleştirdik; her biri bir sanatçının ilk notasını çalan bir QR kod taşıyordu.',
         result: 'Açık hava, sosyal medya ve festival alanını tek bir dilde buluşturan entegre kampanya.' },
-      { name: 'Lina Atelier', title: 'Sessiz lüks, yüksek ses', sector: 'Moda', year: '2025', cats: ['Dijital', 'Film'], services: 'E-ticaret, koleksiyon filmi, içerik', tone: 'orange',
+      { name: 'Lina Atelier', image: './assets/thumbnails/lina-atelier.jpg', title: 'Sessiz lüks, yüksek ses', sector: 'Moda', year: '2025', cats: ['Dijital', 'Film'], services: 'E-ticaret, koleksiyon filmi, içerik', tone: 'orange',
         problem: 'El yapımı bir moda markası, butik deneyimini dijitale taşıyamıyordu.',
         idea: 'Ürün sayfalarını bir moda dergisi gibi kurguladık; her koleksiyon kısa bir filmle açılıyor.',
         result: 'E-ticaret sitesi, koleksiyon filmi ve lansman içerikleri.' },
-      { name: 'Kuzey Enerji', title: 'Geleceğe açık devre', sector: 'Enerji', year: '2024', cats: ['Marka', 'Kampanya'], services: 'Marka stratejisi, kurumsal kimlik, lansman kampanyası', tone: 'ink',
+      { name: 'Kuzey Enerji', image: './assets/thumbnails/kuzey-enerji.jpg', title: 'Geleceğe açık devre', sector: 'Enerji', year: '2024', cats: ['Marka', 'Kampanya'], services: 'Marka stratejisi, kurumsal kimlik, lansman kampanyası', tone: 'ink',
         problem: 'Köklü bir enerji şirketi, yenilenebilir enerjiye dönüşümünü anlatacak bir dile ihtiyaç duyuyordu.',
         idea: 'Kurumsal ağırlığı koruyan ama geleceğe açık, devre çizgisinden doğan yeni bir marka sistemi tasarladık.',
         result: 'Marka stratejisi, kurumsal kimlik ve ulusal lansman kampanyası.' },
-      { name: 'Fırın 34', title: 'Mahallenin en çok paylaşılan ekmeği', sector: 'Yerel işletme', year: '2024', cats: ['Sosyal'], services: 'Sosyal medya stratejisi, günlük içerik serisi', tone: 'orange',
+      { name: 'Fırın 34', image: './assets/thumbnails/firin-34.jpg', title: 'Mahallenin en çok paylaşılan ekmeği', sector: 'Yerel işletme', year: '2024', cats: ['Sosyal'], services: 'Sosyal medya stratejisi, günlük içerik serisi', tone: 'orange',
         problem: 'Bir mahalle fırını, yeni açılan zincir fırınlar karşısında genç müşterisini kaybediyordu.',
         idea: 'Fırının sabah beş ritüelini, her gün aynı saatte yayınlanan kısa videolara dönüştürdük.',
         result: 'Sosyal medya stratejisi, günlük içerik serisi ve yerel topluluk buluşmaları.' },
-      { name: 'Orbit', title: 'Sıfır yerçekimi lansmanı', sector: 'Teknoloji', year: '2024', cats: ['Film', 'Dijital'], services: 'Lansman filmi, ürün sitesi, sosyal kesitler', tone: 'paper',
+      { name: 'Orbit', image: './assets/thumbnails/orbit.jpg', title: 'Sıfır yerçekimi lansmanı', sector: 'Teknoloji', year: '2024', cats: ['Film', 'Dijital'], services: 'Lansman filmi, ürün sitesi, sosyal kesitler', tone: 'paper',
         problem: 'Bir donanım girişimi, karmaşık bir ürünü otuz saniyede anlatmak zorundaydı.',
         idea: 'Ürünü havada asılı bırakan tek planlık bir lansman filmi ve ona eşlik eden bir ürün sitesi.',
         result: 'Lansman filmi, ürün sitesi ve sosyal medya kesitleri.' },
-      { name: 'Sahne 12', title: 'Perde senin için açılıyor', sector: 'Tiyatro', year: '2023', cats: ['Kampanya', 'Marka'], services: 'Sezon kimliği, afiş serisi, dijital bilet', tone: 'ink',
+      { name: 'Sahne 12', image: './assets/thumbnails/sahne-12.jpg', title: 'Perde senin için açılıyor', sector: 'Tiyatro', year: '2023', cats: ['Kampanya', 'Marka'], services: 'Sezon kimliği, afiş serisi, dijital bilet', tone: 'ink',
         problem: 'Bağımsız bir tiyatro, sezon biletlerini genç seyirciye satmakta zorlanıyordu.',
         idea: 'Her seyirciye kişisel bir "rol" veren, onu oyunun bir parçası yapan bir sezon kampanyası.',
         result: 'Sezon kimliği, afiş serisi ve dijital bilet deneyimi.' }
