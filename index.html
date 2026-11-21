@@ -21,6 +21,8 @@ a:hover{color:#F2ECE3}
 input,select,textarea,button{font:inherit;color:inherit}
 @keyframes mustRise{from{transform:translateY(110%)}to{transform:translateY(0)}}
 [data-hide-scrollbar]::-webkit-scrollbar{display:none;width:0;height:0}
+.contact-details{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:clamp(36px,8vw,120px);border-top:1px solid rgba(242,236,227,.16);padding-top:clamp(28px,4vw,48px)}
+@media(max-width:720px){.contact-details{grid-template-columns:1fr;gap:36px}}
 </style>
 </helmet>
 <div ref="{{ rootRef }}" lang="tr" style="position:relative;min-height:100vh;background:#100E0D;color:#F2ECE3;font-family:'Geist',system-ui,sans-serif;overflow-x:clip">
@@ -51,7 +53,7 @@ input,select,textarea,button{font:inherit;color:inherit}
       <a href="#" onClick="{{ goHome }}" style="color:#100E0D;text-decoration:none;font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:900;font-size:clamp(36px,10.5vw,96px);line-height:.98;letter-spacing:-.035em;text-transform:uppercase">Ana sayfa</a>
       <sc-for list="{{ nav }}" as="n" hint-placeholder-count="3"><a href="#" onClick="{{ n.go }}" style="color:#100E0D;text-decoration:none;font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:900;font-size:clamp(36px,10.5vw,96px);line-height:.98;letter-spacing:-.035em;text-transform:uppercase">{{ n.label }}</a></sc-for>
     </nav>
-    <div style="display:flex;flex-direction:column;gap:6px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.04em"><span>merhaba@mustcreative.agency</span><span>+90 536 058 43 45</span></div>
+    <div style="display:flex;flex-direction:column;gap:6px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.04em"><span>info@mustcreativeagency.com</span><span>+90 536 058 43 45</span></div>
   </div>
 </sc-if>
 
@@ -290,7 +292,7 @@ input,select,textarea,button{font:inherit;color:inherit}
       <div style="flex:1 1 380px">
         <h2 data-reveal="" style="margin:0;font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:clamp(52px,9vw,160px);line-height:.92;letter-spacing:-.045em;text-transform:uppercase">Ekibe<br><span style="color:#FF5B14">katıl.</span></h2>
         <p style="margin:clamp(24px,3vw,40px) 0 0;max-width:420px;font-size:17px;line-height:1.55;color:#CFC7BD;text-wrap:pretty">Aradığın rolü listede göremiyorsan portfolyonu yine de gönder. İyi işe her zaman yer açarız.</p>
-        <a href="mailto:kariyer@mustcreative.agency" style="display:inline-block;margin-top:16px;font-size:17px;font-weight:600;color:#FF5B14">kariyer@mustcreative.agency</a>
+        <a href="mailto:info@mustcreativeagency.com" style="display:inline-block;margin-top:16px;font-size:17px;font-weight:600;color:#FF5B14">info@mustcreativeagency.com</a>
       </div>
       <div style="flex:1.4 1 420px;border-bottom:1px solid rgba(242,236,227,.16)">
         <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="3">
@@ -330,7 +332,7 @@ input,select,textarea,button{font:inherit;color:inherit}
           <form onSubmit="{{ hSubmit }}" style="display:flex;flex-direction:column;gap:28px">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:28px">
               <label style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase">Ad soyad</span><input value="{{ hForm.name }}" onChange="{{ hName }}" placeholder="Adın" style="width:100%;box-sizing:border-box;padding:10px 0 12px;background:transparent;border:0;border-bottom:2px solid #100E0D;border-radius:0;color:#100E0D;font-size:20px;outline:none"><sc-if value="{{ hx.name }}" hint-placeholder-val="{{ false }}"><span style="font-family:'DM Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase">■ Adın şart.</span></sc-if></label>
-              <label style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase">E-posta</span><input value="{{ hForm.email }}" onChange="{{ hEmail }}" placeholder="ornek@marka.com" style="width:100%;box-sizing:border-box;padding:10px 0 12px;background:transparent;border:0;border-bottom:2px solid #100E0D;border-radius:0;color:#100E0D;font-size:20px;outline:none"><sc-if value="{{ hx.email }}" hint-placeholder-val="{{ false }}"><span style="font-family:'DM Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase">■ Geçerli bir e-posta şart.</span></sc-if></label>
+              <label style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase">E-posta</span><input value="{{ hForm.email }}" onChange="{{ hEmail }}" placeholder="E-posta adresin" style="width:100%;box-sizing:border-box;padding:10px 0 12px;background:transparent;border:0;border-bottom:2px solid #100E0D;border-radius:0;color:#100E0D;font-size:20px;outline:none"><sc-if value="{{ hx.email }}" hint-placeholder-val="{{ false }}"><span style="font-family:'DM Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase">■ Geçerli bir e-posta şart.</span></sc-if></label>
             </div>
             <div style="display:flex;flex-direction:column;gap:12px">
               <span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase">Ne üzerinde çalışalım?</span>
@@ -341,7 +343,7 @@ input,select,textarea,button{font:inherit;color:inherit}
             <label style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase">Mesaj</span><textarea value="{{ hForm.msg }}" onChange="{{ hMsg }}" rows="3" placeholder="Biraz anlat: marka, hedef, zamanlama…" style="width:100%;box-sizing:border-box;padding:10px 0 12px;background:transparent;border:0;border-bottom:2px solid #100E0D;border-radius:0;color:#100E0D;font-size:20px;line-height:1.5;outline:none;resize:vertical"></textarea><sc-if value="{{ hx.msg }}" hint-placeholder-val="{{ false }}"><span style="font-family:'DM Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase">■ Birkaç cümle şart.</span></sc-if></label>
             <div style="display:flex;align-items:center;flex-wrap:wrap;gap:16px">
               <button type="submit" style="display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 28px;border-radius:999px;border:0;background-color:#100E0D;color:#F2ECE3;font-size:16px;font-weight:600;transition:background-color .3s,color .3s" style-hover="background-color:#F2ECE3;color:#100E0D">{{ hBtn }}</button>
-              <span style="font-size:15px">ya da <a href="mailto:yeniis@mustcreative.agency" style="color:#100E0D;text-decoration:underline;text-underline-offset:3px">yeniis@mustcreative.agency</a></span>
+              <span style="font-size:15px">ya da <a href="mailto:info@mustcreativeagency.com" style="color:#100E0D;text-decoration:underline;text-underline-offset:3px">info@mustcreativeagency.com</a></span>
             </div>
           </form>
         </sc-if>
@@ -494,13 +496,22 @@ input,select,textarea,button{font:inherit;color:inherit}
     </div>
   </section>
   <section style="padding:0 clamp(20px,4vw,56px) clamp(80px,10vw,150px)">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1px;background:rgba(242,236,227,.16);border:1px solid rgba(242,236,227,.16)">
-      <sc-for list="{{ contactInfo }}" as="c" hint-placeholder-count="5">
-        <div style="display:flex;flex-direction:column;gap:14px;min-height:170px;box-sizing:border-box;padding:clamp(20px,2vw,28px);background:#100E0D">
-          <span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">{{ c.label }}</span>
-          <span style="font-size:18px;line-height:1.5;white-space:pre-line">{{ c.value }}</span>
+    <div class="contact-details">
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px">
+        <span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">İletişim</span>
+        <a href="mailto:info@mustcreativeagency.com" style="max-width:100%;font-size:clamp(24px,4vw,54px);line-height:1.12;letter-spacing:-.04em;color:#F2ECE3;overflow-wrap:anywhere">info@mustcreativeagency.com</a>
+        <a href="tel:+905360584345" style="margin-top:4px;font-size:20px;color:#A39B92">+90 536 058 43 45</a>
+      </div>
+      <div style="display:grid;gap:28px">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Ofis</span>
+          <span style="font-size:18px;line-height:1.6">Quasar İstanbul<br>Fulya Mahallesi, Mecidiyeköy Mahallesi<br>Büyükdere Cd. No: 76<br>34394 Şişli / İstanbul</span>
         </div>
-      </sc-for>
+        <div style="display:flex;flex-direction:column;gap:12px;padding-top:22px;border-top:1px solid rgba(242,236,227,.16)">
+          <span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Çalışma saatleri</span>
+          <span style="font-size:18px;line-height:1.5">Hafta içi<br>09.30 – 18.30</span>
+        </div>
+      </div>
     </div>
   </section>
 </sc-if>
@@ -697,13 +708,6 @@ class Component extends DCLogic {
       steps: STEPS.map((s, i) => Object.assign({ no: '0' + (i + 1) }, s)),
       blog: BLOG.map((b, i) => Object.assign({ slot: 'blog-' + (i + 1) }, b)),
       manifesto: MANIFESTO.map((text, i) => ({ no: '0' + (i + 1), text })),
-      contactInfo: [
-        { label: 'Yeni iş', value: 'info@mustcreativeagency.com\n+90 536 058 43 45' },
-        { label: 'Kariyer', value: 'kariyer@mustcreative.agency' },
-        { label: 'Basın & genel', value: 'merhaba@mustcreative.agency' },
-        { label: 'Ofis', value: 'Quasar İstanbul\nFulya Mahallesi, Mecidiyeköy Mahallesi\nBüyükdere Cd. No: 76\n34394 Şişli / İstanbul' },
-        { label: 'Çalışma saatleri', value: 'Hafta içi\n09.30 – 18.30' }
-      ],
     };
     return this._d;
   }
@@ -1158,7 +1162,6 @@ class Component extends DCLogic {
       cFirst: (cf.name.trim().split(' ')[0] || ''), cBtn: s.cSending ? 'Gönderiliyor…' : 'Gönder →',
       cName: this.cName, cCompany: this.cCompany, cService: this.cService, cBudget: this.cBudget, cEmail: this.cEmail,
       cPosition: this.cPosition, cPortfolio: this.cPortfolio, cMsg: this.cMsg, cKvkk: this.cKvkk, cSubmit: this.cSubmit, cReset: this.cReset,
-      contactInfo: D.contactInfo
     };
   }
 }
