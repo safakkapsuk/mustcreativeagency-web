@@ -51,7 +51,7 @@ input,select,textarea,button{font:inherit;color:inherit}
       <a href="#" onClick="{{ goHome }}" style="color:#100E0D;text-decoration:none;font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:900;font-size:clamp(36px,10.5vw,96px);line-height:.98;letter-spacing:-.035em;text-transform:uppercase">Ana sayfa</a>
       <sc-for list="{{ nav }}" as="n" hint-placeholder-count="3"><a href="#" onClick="{{ n.go }}" style="color:#100E0D;text-decoration:none;font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:900;font-size:clamp(36px,10.5vw,96px);line-height:.98;letter-spacing:-.035em;text-transform:uppercase">{{ n.label }}</a></sc-for>
     </nav>
-    <div style="display:flex;flex-direction:column;gap:6px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.04em"><span>merhaba@mustcreative.agency</span><span>+90 212 000 00 00</span></div>
+    <div style="display:flex;flex-direction:column;gap:6px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.04em"><span>merhaba@mustcreative.agency</span><span>+90 536 058 43 45</span></div>
   </div>
 </sc-if>
 
@@ -417,6 +417,28 @@ input,select,textarea,button{font:inherit;color:inherit}
       </div>
     </section>
   </sc-if>
+  <section style="padding:clamp(44px,6vw,84px) 0 clamp(80px,10vw,140px)">
+    <div style="padding:0 clamp(20px,4vw,56px)">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;padding-top:14px;border-top:1px solid rgba(242,236,227,.16)">
+        <div><div style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">(02) Kısa video işleri</div><h2 style="margin:18px 0 0;font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:clamp(42px,7vw,96px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase">Reels</h2></div>
+        <p style="margin:0;max-width:360px;font-size:16px;line-height:1.55;color:#A39B92">Kısa filmler ve sosyal medya işleri. Videolar yatay kaydırmayla keşfedilir.</p>
+      </div>
+    </div>
+    <div data-hide-scrollbar="" style="display:flex;gap:clamp(14px,1.8vw,24px);overflow-x:auto;scrollbar-width:none;padding:clamp(28px,4vw,48px) clamp(20px,4vw,56px) 12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch">
+      <article style="position:relative;flex:none;width:clamp(190px,22vw,310px);scroll-snap-align:start">
+        <div style="position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:6px;background:#221D1A"><video controls playsinline muted preload="none" poster="./assets/thumbnails/pervane.jpg" aria-label="Kısa video 01" style="display:block;width:100%;height:100%;object-fit:cover"><source src="./assets/reels/reel-01.mp4" type="video/mp4"></video><span style="position:absolute;top:14px;left:14px;pointer-events:none;padding:7px 10px;border-radius:999px;background:rgba(16,14,13,.72);font-family:'DM Mono',monospace;font-size:11px;color:#F2ECE3">01</span></div>
+      </article>
+      <article style="position:relative;flex:none;width:clamp(190px,22vw,310px);scroll-snap-align:start">
+        <div style="position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:6px;background:#221D1A"><video controls playsinline muted preload="none" poster="./assets/thumbnails/atolye-kahve.jpg" aria-label="Kısa video 02" style="display:block;width:100%;height:100%;object-fit:cover"><source src="./assets/reels/reel-02.mp4" type="video/mp4"></video><span style="position:absolute;top:14px;left:14px;pointer-events:none;padding:7px 10px;border-radius:999px;background:rgba(16,14,13,.72);font-family:'DM Mono',monospace;font-size:11px;color:#F2ECE3">02</span></div>
+      </article>
+      <article style="position:relative;flex:none;width:clamp(190px,22vw,310px);scroll-snap-align:start">
+        <div style="position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:6px;background:#221D1A"><video controls playsinline muted preload="none" poster="./assets/thumbnails/ruzgar-festivali.jpg" aria-label="Kısa video 03" style="display:block;width:100%;height:100%;object-fit:cover"><source src="./assets/reels/reel-03.mp4" type="video/mp4"></video><span style="position:absolute;top:14px;left:14px;pointer-events:none;padding:7px 10px;border-radius:999px;background:rgba(16,14,13,.72);font-family:'DM Mono',monospace;font-size:11px;color:#F2ECE3">03</span></div>
+      </article>
+      <article style="position:relative;flex:none;width:clamp(190px,22vw,310px);scroll-snap-align:start">
+        <div style="position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:6px;background:#221D1A"><video controls playsinline muted preload="none" poster="./assets/thumbnails/lina-atelier.jpg" aria-label="Kısa video 04" style="display:block;width:100%;height:100%;object-fit:cover"><source src="./assets/reels/reel-04.mp4" type="video/mp4"></video><span style="position:absolute;top:14px;left:14px;pointer-events:none;padding:7px 10px;border-radius:999px;background:rgba(16,14,13,.72);font-family:'DM Mono',monospace;font-size:11px;color:#F2ECE3">04</span></div>
+      </article>
+    </div>
+  </section>
 </sc-if>
 
 <sc-if value="{{ showCtaBand }}" hint-placeholder-val="{{ false }}">
@@ -485,8 +507,8 @@ input,select,textarea,button{font:inherit;color:inherit}
 
 <footer style="background:#100E0D;color:#F2ECE3;padding:clamp(64px,8vw,120px) clamp(20px,4vw,56px) 28px;overflow:hidden;border-top:1px solid rgba(242,236,227,.1)">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:36px">
-    <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Yeni iş</span><a href="mailto:yeniis@mustcreative.agency" style="font-size:18px;font-weight:500;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">yeniis@mustcreative.agency</a><span style="font-size:16px;color:#A39B92">+90 212 000 00 00</span></div>
-    <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Ofis</span><span style="font-size:16px;line-height:1.5">Karaköy, Beyoğlu<br>İstanbul</span></div>
+    <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Yeni iş</span><a href="mailto:info@mustcreativeagency.com" style="font-size:18px;font-weight:500;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">info@mustcreativeagency.com</a><a href="tel:+905360584345" style="font-size:16px;color:#A39B92">+90 536 058 43 45</a></div>
+    <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Ofis</span><span style="font-size:16px;line-height:1.5">Quasar İstanbul<br>Fulya Mahallesi, Mecidiyeköy Mahallesi<br>Büyükdere Cd. No: 76<br>34394 Şişli / İstanbul</span></div>
     <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Sosyal</span><sc-for list="{{ socials }}" as="x" hint-placeholder-count="4"><a href="#" onClick="{{ noop }}" style="width:max-content;font-size:16px;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">{{ x }} ↗</a></sc-for></div>
     <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Sayfalar</span><a href="#" onClick="{{ goHome }}" style="width:max-content;font-size:16px;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">Ana sayfa</a><sc-for list="{{ nav }}" as="n" hint-placeholder-count="3"><a href="#" onClick="{{ n.go }}" style="width:max-content;font-size:16px;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">{{ n.label }}</a></sc-for></div>
   </div>
@@ -676,10 +698,10 @@ class Component extends DCLogic {
       blog: BLOG.map((b, i) => Object.assign({ slot: 'blog-' + (i + 1) }, b)),
       manifesto: MANIFESTO.map((text, i) => ({ no: '0' + (i + 1), text })),
       contactInfo: [
-        { label: 'Yeni iş', value: 'yeniis@mustcreative.agency\n+90 212 000 00 00' },
+        { label: 'Yeni iş', value: 'info@mustcreativeagency.com\n+90 536 058 43 45' },
         { label: 'Kariyer', value: 'kariyer@mustcreative.agency' },
         { label: 'Basın & genel', value: 'merhaba@mustcreative.agency' },
-        { label: 'Ofis', value: 'Karaköy, Beyoğlu\nİstanbul' },
+        { label: 'Ofis', value: 'Quasar İstanbul\nFulya Mahallesi, Mecidiyeköy Mahallesi\nBüyükdere Cd. No: 76\n34394 Şişli / İstanbul' },
         { label: 'Çalışma saatleri', value: 'Hafta içi\n09.30 – 18.30' }
       ],
       socials: ['Instagram', 'LinkedIn', 'Behance', 'Vimeo']
