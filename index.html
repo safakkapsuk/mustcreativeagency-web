@@ -52,6 +52,7 @@
         <button class="work-card work-restaurant reveal" type="button" data-album="restaurant"><img src="assets/must-work/still-food.jpg" alt="Restoran için tabak sunumu" loading="lazy"><span class="work-card-copy"><span><strong>Restaurant</strong></span><span class="work-card-arrow">↗</span></span></button>
         <button class="work-card work-hotel reveal" type="button" data-album="hotel"><img src="assets/must-work/still-hotel.jpg" alt="Havuzlu otel ve konaklama mekânı" loading="lazy"><span class="work-card-copy"><span><strong>Hotel</strong></span><span class="work-card-arrow">↗</span></span></button>
         <button class="work-card work-jewelry reveal" type="button" data-album="jewelry"><img src="assets/must-work/still-jewelry.jpg" alt="Takı koleksiyonundan bileklik detay çekimi" loading="lazy"><span class="work-card-copy"><span><strong>Jewelry</strong></span><span class="work-card-arrow">↗</span></span></button>
+        <button class="work-card work-sports reveal" type="button" data-album="sports"><img src="assets/must-work/albums/sports/sports-training.jpg" alt="Spor salonunda antrenman yapan kadın" loading="lazy"><span class="work-card-copy"><span><strong>Spor</strong></span><span class="work-card-arrow">↗</span></span></button>
       </div>
     </section>
     <dialog class="album-dialog" id="albumDialog" aria-labelledby="albumTitle"><div class="album-shell"><header class="album-top"><div><span class="mono" id="albumKicker">SEÇİLİ İŞLER / ALBÜM</span><h2 id="albumTitle"></h2><p id="albumDescription"></p></div><button class="album-close" type="button" aria-label="Albümü kapat">×</button></header><div class="album-grid" id="albumGrid"></div></div></dialog>
@@ -99,7 +100,10 @@
       ], reels: [['hotel-fireplace','assets/must-work/reels/hotel-fireplace.jpg'],['hotel-suite','assets/must-work/reels/hotel-suite.jpg']] },
       jewelry: { title: 'Jewelry', description: 'Takı koleksiyonu, ürün detayları ve editoryal kareler.', photos: [
         ['assets/must-work/still-jewelry.jpg','Takı ürün detayı'],['assets/must-work/photo-jewelry.jpg','Editoryal takı çekimi'],['assets/must-work/albums/jewelry-editorial.jpg','Takı kampanyasından portre'],['assets/must-work/albums/jewelry-detail.jpg','Takı detay çekimi'],['assets/must-work/albums/jewelry-portrait.jpg','Takı ve portre çalışması']
-      ], reels: [['jewelry-editorial','assets/must-work/reels/jewelry-editorial.jpg'],['jewelry-closeup','assets/must-work/reels/jewelry-closeup.jpg']] }
+      ], reels: [['jewelry-editorial','assets/must-work/reels/jewelry-editorial.jpg'],['jewelry-closeup','assets/must-work/reels/jewelry-closeup.jpg']] },
+      sports: { title: 'Spor', description: 'Antrenman, ekipman ve hareketten kareler.', photos: [
+        ['assets/must-work/albums/sports/sports-training.jpg','Spor salonunda antrenman yapan kadın'],['assets/must-work/albums/sports/sports-athlete.jpg','Spor salonunda egzersiz yapan kadın'],['assets/must-work/albums/sports/sports-dumbbells.jpg','Spor salonunda dambıl sırası'],['assets/must-work/albums/sports/sports-kettlebell.jpg','Antrenman halatı ve kettlebell'],['assets/must-work/albums/sports/sports-weights.jpg','Spor ekipmanı ve ağırlık plakaları']
+      ], reels: [] }
     };
     const albumDialog = document.querySelector('#albumDialog');
     const albumGrid = document.querySelector('#albumGrid');
