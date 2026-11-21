@@ -509,7 +509,7 @@ input,select,textarea,button{font:inherit;color:inherit}
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:36px">
     <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Yeni iş</span><a href="mailto:info@mustcreativeagency.com" style="font-size:18px;font-weight:500;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">info@mustcreativeagency.com</a><a href="tel:+905360584345" style="font-size:16px;color:#A39B92">+90 536 058 43 45</a></div>
     <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Ofis</span><span style="font-size:16px;line-height:1.5">Quasar İstanbul<br>Fulya Mahallesi, Mecidiyeköy Mahallesi<br>Büyükdere Cd. No: 76<br>34394 Şişli / İstanbul</span></div>
-    <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Sosyal</span><sc-for list="{{ socials }}" as="x" hint-placeholder-count="4"><a href="#" onClick="{{ noop }}" style="width:max-content;font-size:16px;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">{{ x }} ↗</a></sc-for></div>
+    <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Sosyal</span><a href="https://www.instagram.com/mustcreativeagency/" target="_blank" rel="noopener noreferrer" style="width:max-content;font-size:16px;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">Instagram ↗</a></div>
     <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A39B92">Sayfalar</span><a href="#" onClick="{{ goHome }}" style="width:max-content;font-size:16px;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">Ana sayfa</a><sc-for list="{{ nav }}" as="n" hint-placeholder-count="3"><a href="#" onClick="{{ n.go }}" style="width:max-content;font-size:16px;color:#F2ECE3;transition:color .25s" style-hover="color:#FF5B14">{{ n.label }}</a></sc-for></div>
   </div>
   <div aria-hidden="true" style="display:flex;justify-content:space-between;margin-top:clamp(56px,8vw,120px);font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:clamp(80px,23vw,480px);line-height:.76;letter-spacing:-.04em;color:#FF5B14;user-select:none">
@@ -704,7 +704,6 @@ class Component extends DCLogic {
         { label: 'Ofis', value: 'Quasar İstanbul\nFulya Mahallesi, Mecidiyeköy Mahallesi\nBüyükdere Cd. No: 76\n34394 Şişli / İstanbul' },
         { label: 'Çalışma saatleri', value: 'Hafta içi\n09.30 – 18.30' }
       ],
-      socials: ['Instagram']
     };
     return this._d;
   }
@@ -1159,7 +1158,7 @@ class Component extends DCLogic {
       cFirst: (cf.name.trim().split(' ')[0] || ''), cBtn: s.cSending ? 'Gönderiliyor…' : 'Gönder →',
       cName: this.cName, cCompany: this.cCompany, cService: this.cService, cBudget: this.cBudget, cEmail: this.cEmail,
       cPosition: this.cPosition, cPortfolio: this.cPortfolio, cMsg: this.cMsg, cKvkk: this.cKvkk, cSubmit: this.cSubmit, cReset: this.cReset,
-      contactInfo: D.contactInfo, socials: D.socials
+      contactInfo: D.contactInfo
     };
   }
 }
